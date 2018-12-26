@@ -9,7 +9,7 @@ const render = () => {
     r.header({ className: 'App-header' }, [
       r.img({ alt: 'logo', className: 'App-logo', src: logo }),
       r.p(['Welcome to Snagshout!']),
-      r.p(['Edit ', r(code, ['src/App.js']), ' and save to reload.']),
+      r.p(['Edit ', r.code(['src/App.js']), ' and save to reload.']),
     ]),
   ]);
 };
