@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
+import { stitch } from 'keo';
+import r from 'r-dom';
+
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const render = () => {
+  return r.div({ className: 'App' }, [
+    r.header({ className: 'App-header' }, [
+      r.img({ alt: 'logo', className: 'App-logo', src: logo }),
+      r.p(['Welcome to Snagshout!']),
+      r.p(['Edit ', r(code, ['src/App.js']), ' and save to reload.']),
+    ]),
+  ]);
+};
 
-export default App;
+export default stitch({ render });
